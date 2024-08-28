@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://dj1fkbs5vhuti"]
+
+[ext_resource type="PackedScene" uid="uid://8p6nxmlqs30a" path="res://scenes/player.tscn" id="1_h8lsb"]
+[ext_resource type="Texture2D" uid="uid://832vxx11lmkp" path="res://texturas/blue-night-sky-filled-with-stars.jpg" id="1_ibg23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yp3f"]
+albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb6xt"]
+albedo_color = Color(0.663422, 0.324272, 9.62615e-08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvxgj"]
+albedo_color = Color(0.385493, 0.385492, 0.385492, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8iurq"]
+albedo_color = Color(0.0999859, 0.099986, 0.099986, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r8wvq"]
+panorama = ExtResource("1_ibg23")
+
+[sub_resource type="Sky" id="Sky_pnuh5"]
+sky_material = SubResource("PanoramaSkyMaterial_r8wvq")
+
+[sub_resource type="Environment" id="Environment_04r10"]
+background_mode = 2
+sky = SubResource("Sky_pnuh5")
+tonemap_mode = 2
+glow_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+adjustment_enabled = true
+adjustment_contrast = 2.0
+
+[node name="World" type="Node3D"]
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18457, 0, 0)
+material_override = SubResource("StandardMaterial3D_0yp3f")
+use_collision = true
+size = Vector3(39.0293, 1, 20)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geometry"]
+transform = Transform3D(0.494034, -0.869443, 3.80045e-08, 4.68092e-15, -4.37114e-08, -1, 0.869443, 0.494034, -2.15949e-08, -1.78755, -0.0811665, 1.66745)
+use_collision = true
+radius = 2.62532
+sides = 16
+material = SubResource("StandardMaterial3D_mb6xt")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.78094, -17.8746)
+use_collision = true
+size = Vector3(20, 11.4381, 20)
+material = SubResource("StandardMaterial3D_jvxgj")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.207, 0.876709, -6.60878)
+use_collision = true
+size = Vector3(5, 16.7534, 5)
+material = SubResource("StandardMaterial3D_8iurq")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.207, -6, -9.19089)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_8iurq")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.207, -5, -4)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_8iurq")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.207, -4, 1.233)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_8iurq")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.207, -3, 6.36994)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_8iurq")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.207, -2.55737, 11.5858)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_8iurq")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.979, -1, 12.7349)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_8iurq")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4446, 1, 4.15256)
+use_collision = true
+material = SubResource("StandardMaterial3D_mb6xt")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(0.857625, 0, 0.514275, 0, 1, 0, -0.514275, 0, 0.857625, -3.9695, 1.52008, -1.99767)
+use_collision = true
+size = Vector3(2, 2.04016, 8.52393)
+material = SubResource("StandardMaterial3D_mb6xt")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Geometry"]
+transform = Transform3D(0.887301, -0.461191, 2.01593e-08, 0, -4.37114e-08, -1, 0.461191, 0.887301, -3.87851e-08, 3.88105, 0, -5.16706)
+use_collision = true
+inner_radius = 2.0
+outer_radius = 4.63348
+sides = 20
+material = SubResource("StandardMaterial3D_mb6xt")
+
+[node name="Environment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55679, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.945747, -0.203676, -0.253139, 0.253804, -0.0232948, 0.966975, -0.202846, -0.978761, 0.0296628, -9.56686, 12.179, 0.177078)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_04r10")
+
+[node name="Node3D" parent="." instance=ExtResource("1_h8lsb")]
