@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7oj7y646ue2t"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_7giow"]
+[ext_resource type="ArrayMesh" uid="uid://th0ksy5y2h4i" path="res://models/backrooms/source/backrooms-main-menu-obj/backrooms-main-menu.obj" id="1_furxt"]
+[ext_resource type="ArrayMesh" uid="uid://bhoqa86cpx3g3" path="res://models/source/Backrooms Level 0/tinker.obj" id="2_yg72n"]
+[ext_resource type="PackedScene" uid="uid://duuycfhk7nsqx" path="res://models/partygoer_from_backrooms/scene.gltf" id="3_f5mmi"]
+[ext_resource type="AudioStream" uid="uid://ci0nvlodyha3m" path="res://sound/First_computer_to_sing_-_Daisy_Bell_(youconvert.net).mp3" id="5_hucsx"]
+
+[sub_resource type="FontFile" id="FontFile_hmns1"]
+cache/0/120/0/ascent = 0.0
+cache/0/120/0/descent = 0.0
+cache/0/120/0/underline_position = 0.0
+cache/0/120/0/underline_thickness = 0.0
+cache/0/120/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/90/0/ascent = 0.0
+cache/0/90/0/descent = 0.0
+cache/0/90/0/underline_position = 0.0
+cache/0/90/0/underline_thickness = 0.0
+cache/0/90/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_bvh1e"]
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_7giow")
+
+[node name="Backrooms-main-menu" type="MeshInstance3D" parent="."]
+transform = Transform3D(48.7328, 0, 0, 0, 48.7328, 0, 0, 0, 48.7328, -0.0195271, 3.52724, 0.649941)
+visible = false
+mesh = ExtResource("1_furxt")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.694062, 6.057, 3.11832)
+
+[node name="Tinker" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.291942, 0, 0, 0, -1.27612e-08, 0.291942, 0, -0.291942, -1.27612e-08, 1.93632, -1.33169, -11.0633)
+mesh = ExtResource("2_yg72n")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.54135, 3.94582)
+spot_range = 6.1647
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_f5mmi")]
+transform = Transform3D(3.34614, 0, 0, 0, 3.34614, 0, 0, 0, 3.34614, 0.658086, 4.76837e-07, -0.130949)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 435.0
+offset_bottom = 270.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 467.0
+offset_bottom = 321.0
+theme_override_fonts/font = SubResource("FontFile_hmns1")
+theme_override_font_sizes/font_size = 25
+text = "Backrooms"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 44.0
+offset_right = 66.0
+offset_bottom = 63.0
+theme_override_fonts/font = SubResource("FontFile_bvh1e")
+theme_override_font_sizes/font_size = 10
+text = "Play"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.63376, 14.5493, -12.1449)
+size = Vector3(52.5454, 1, 38.7178)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hucsx")
+autoplay = true
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

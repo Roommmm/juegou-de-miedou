@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dkwi76xsh0gnp"]
+
+[ext_resource type="Texture2D" uid="uid://ofwwnvlfwrk" path="res://texturas/Block+of+Wood+1-420716898.png" id="1_ofnia"]
+
+[resource]
+albedo_color = Color(0.883378, 0.883378, 0.883378, 1)
+albedo_texture = ExtResource("1_ofnia")

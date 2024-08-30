@@ -2,15 +2,20 @@
 extends CharacterBody3D
 class_name UCharacterBody3D
 @onready var camera: Camera3D = $Head/Camera
+@onready var label: Label = $Control/Label
+@onready var timer: Timer = $Timer
 
 ## A 3D physics body using a revamped template script.
 
 @export_group("Character Speeds")
 @export var jump_velocity : float = 4.5
-@export var walk_speed : float = 5.0
-@export var sprint_speed : float = 8.0
+@export var walk_speed : float = 2.0
+@export var sprint_speed : float = 4.0
 @export var crouch_speed : float = 3.0
-@export var slide_speed : float = 7.0
+var seconds = 0
+var minutes = 0
+var Dseconds = 30
+var Dminutes = 1
 
 @export_group("Character Settings")
 ## Where the camera will be positioned, default of 1.8 is based off of a character height of 2.0
@@ -71,9 +76,6 @@ func _enter_tree():
 	if Engine.is_editor_hint():
 		# Obtain the current scene root
 		scene = get_tree().edited_scene_root
-		if scene == null:
-			printerr("Failed to obtain scene tree in editor")
-			return
 	
 	if !Engine.is_editor_hint():
 		collision_shape_normal = $CollisionShapeNormal
@@ -83,7 +85,9 @@ func _enter_tree():
 		raycast_node = $RayCast3D
 
 func _ready():
+	reset_timer()
 	
+			
 	# Only editor: Create child nodes
 	if Engine.is_editor_hint():
 		# TODO: Find a better way to implement this. A workaround to not adding duplicate nodes
@@ -164,14 +168,7 @@ func _physics_process(delta):
 			collision_shape_crouch.disabled = false
 			
 			# Handle sliding
-			if is_sprinting and input_dir != Vector2.ZERO:
-				is_sliding = true
-				slide_timer = sliding_length
-				slide_vector = input_dir
 			
-			is_walking = false
-			is_sprinting = false
-			is_crouching = true
 			
 		elif !raycast_node.is_colliding():
 			head_node.position.y = lerpf(head_node.position.y, standing_height, delta * 10.0)
@@ -192,10 +189,7 @@ func _physics_process(delta):
 				is_sprinting = false
 				is_crouching = false
 		
-		if is_sliding:
-			slide_timer -= delta
-			if slide_timer <= 0:
-				is_sliding = false
+		
 		
 		# Handle head bob.
 		if is_sprinting:
@@ -238,11 +232,6 @@ func _physics_process(delta):
 		else:
 			if input_dir != Vector2.ZERO:
 				direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * 3.0)
-		
-		if is_sliding:
-			direction = (transform.basis * Vector3(slide_vector.x, 0, slide_vector.y)).normalized()
-			current_speed = (slide_timer + 0.1) * slide_speed
-		
 		if direction:
 			velocity.x = direction.x * current_speed
 			velocity.z = direction.z * current_speed
@@ -253,3 +242,10 @@ func _physics_process(delta):
 		last_velocity = velocity
 		
 		move_and_slide()
+	
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	
+func reset_timer():
+	seconds = Dseconds
+	minutes = Dminutes

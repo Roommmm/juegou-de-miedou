@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://th0ksy5y2h4i"
+path="res://.godot/imported/backrooms-main-menu.obj-95bc3b4044e5eca3b7d13e11a9ea552d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/backrooms-main-menu.obj-95bc3b4044e5eca3b7d13e11a9ea552d.mesh"]
+
+source_file="res://models/backrooms/source/backrooms-main-menu-obj/backrooms-main-menu.obj"
+dest_files=["res://.godot/imported/backrooms-main-menu.obj-95bc3b4044e5eca3b7d13e11a9ea552d.mesh", "res://.godot/imported/backrooms-main-menu.obj-95bc3b4044e5eca3b7d13e11a9ea552d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

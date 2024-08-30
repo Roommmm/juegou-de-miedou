@@ -1,0 +1,11 @@
+Model Information:
+* title:	Almond_Water_Can
+* source:	https://sketchfab.com/3d-models/almond-water-can-a9a20842483c42499ea18a6ed5f9342a
+* author:	ThatBackRoomsGuy (https://sketchfab.com/BackRoomsModelsCentral)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Almond_Water_Can" (https://sketchfab.com/3d-models/almond-water-can-a9a20842483c42499ea18a6ed5f9342a) by ThatBackRoomsGuy (https://sketchfab.com/BackRoomsModelsCentral) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
