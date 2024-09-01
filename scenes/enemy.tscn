@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg36cjqo54a5g"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_vvgk0"]
+[ext_resource type="PackedScene" uid="uid://najq560srpvr" path="res://models/bacteria_-_backrooms_actually_pretty_accurate/scene.gltf" id="2_3yvw3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i65f8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2dl14"]
+radius = 2.84839
+
+[node name="ENEMY" type="Node3D"]
+
+[node name="enemy" type="CharacterBody3D" parent="."]
+process_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.13341, 0.933119, 0)
+script = ExtResource("1_vvgk0")
+player_path = NodePath("../../../player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy"]
+shape = SubResource("CapsuleShape3D_i65f8")
+
+[node name="Area3D" type="Area3D" parent="enemy"]
+monitoring = false
+priority = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy/Area3D"]
+shape = SubResource("SphereShape3D_2dl14")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="enemy"]
+path_height_offset = 0.15
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_3yvw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)

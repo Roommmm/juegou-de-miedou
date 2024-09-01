@@ -2,7 +2,6 @@
 extends CharacterBody3D
 class_name UCharacterBody3D
 @onready var camera: Camera3D = $Head/Camera
-@onready var label: Label = $Control/Label
 @onready var timer: Timer = $Timer
 
 ## A 3D physics body using a revamped template script.
@@ -177,14 +176,14 @@ func _physics_process(delta):
 			
 			if Input.is_action_pressed("SPRINT"):
 				current_speed = lerpf(current_speed, sprint_speed, delta * 10.0)
-				
+				camera.fov = 80 
 				is_walking = false
 				is_sprinting = true
 				is_crouching = false
 				
 			else:
 				current_speed = lerpf(current_speed, walk_speed, delta * 10.0)
-				
+				camera.fov = 70
 				is_walking = true
 				is_sprinting = false
 				is_crouching = false

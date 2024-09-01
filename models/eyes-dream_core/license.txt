@@ -1,0 +1,11 @@
+Model Information:
+* title:	eyes-dream core
+* source:	https://sketchfab.com/3d-models/eyes-dream-core-4b364c7c3bfa4fc795933554d0fe12d7
+* author:	neutron star (https://sketchfab.com/trydofor)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "eyes-dream core" (https://sketchfab.com/3d-models/eyes-dream-core-4b364c7c3bfa4fc795933554d0fe12d7) by neutron star (https://sketchfab.com/trydofor) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

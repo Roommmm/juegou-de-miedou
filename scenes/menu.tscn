@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7oj7y646ue2t"]
+[gd_scene load_steps=9 format=3 uid="uid://c7oj7y646ue2t"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_7giow"]
 [ext_resource type="ArrayMesh" uid="uid://th0ksy5y2h4i" path="res://models/backrooms/source/backrooms-main-menu-obj/backrooms-main-menu.obj" id="1_furxt"]
 [ext_resource type="ArrayMesh" uid="uid://bhoqa86cpx3g3" path="res://models/source/Backrooms Level 0/tinker.obj" id="2_yg72n"]
 [ext_resource type="PackedScene" uid="uid://duuycfhk7nsqx" path="res://models/partygoer_from_backrooms/scene.gltf" id="3_f5mmi"]
 [ext_resource type="AudioStream" uid="uid://ci0nvlodyha3m" path="res://sound/First_computer_to_sing_-_Daisy_Bell_(youconvert.net).mp3" id="5_hucsx"]
+[ext_resource type="PackedScene" uid="uid://najq560srpvr" path="res://models/bacteria_-_backrooms_actually_pretty_accurate/scene.gltf" id="6_yfkbp"]
 
 [sub_resource type="FontFile" id="FontFile_hmns1"]
 cache/0/120/0/ascent = 0.0
@@ -74,12 +75,11 @@ cache/0/10/0/scale = 1.0
 script = ExtResource("1_7giow")
 
 [node name="Backrooms-main-menu" type="MeshInstance3D" parent="."]
-transform = Transform3D(48.7328, 0, 0, 0, 48.7328, 0, 0, 0, 48.7328, -0.0195271, 3.52724, 0.649941)
-visible = false
+transform = Transform3D(47.0174, -6.95071, -10.7676, 6.77531, 48.2346, -1.55163, 10.8788, 0, 47.503, 4.42227, 0.0920136, -10.3291)
 mesh = ExtResource("1_furxt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.694062, 6.057, 3.11832)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344754, 4.38147, 2.22148)
 
 [node name="Tinker" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.291942, 0, 0, 0, -1.27612e-08, 0.291942, 0, -0.291942, -1.27612e-08, 1.93632, -1.33169, -11.0633)
@@ -87,10 +87,17 @@ mesh = ExtResource("2_yg72n")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.54135, 3.94582)
-spot_range = 6.1647
+light_color = Color(0.960437, 0.701168, 0.668736, 1)
+light_energy = 1.5
+light_indirect_energy = 3.0
+spot_range = 32.785
+spot_angle = 33.2955
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_f5mmi")]
-transform = Transform3D(3.34614, 0, 0, 0, 3.34614, 0, 0, 0, 3.34614, 0.658086, 4.76837e-07, -0.130949)
+transform = Transform3D(3.34614, 0, 0, 0, 3.34614, 0, 0, 0, 3.34614, -0.280625, -2.52685, 0.556952)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("6_yfkbp")]
+transform = Transform3D(1.37005, 0.394445, 0.822658, -0.338166, 1.59807, -0.203054, -0.847347, 0, 1.41117, -0.999282, 0, -0.41034)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

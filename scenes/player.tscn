@@ -1,20 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://8p6nxmlqs30a"]
+[gd_scene load_steps=8 format=4 uid="uid://8p6nxmlqs30a"]
 
 [ext_resource type="Script" path="res://addons/ultimate_character/ucharacterbody3d.gd" id="1_gl526"]
+[ext_resource type="Texture2D" uid="uid://btk3hw0t5ywib" path="res://models/flash_light_psx__low_poly/textures/BuildersTorch_Albedo_baseColor.png" id="2_ymgvg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjhm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2cges"]
 height = 1.3
 
-[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_raa7h"]
-size = Vector3(69.0373, 31.5994, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4p4s"]
+resource_name = "BuildersTorch_Albedo"
+cull_mode = 2
+albedo_texture = ExtResource("2_ymgvg")
+roughness = 0.957705
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_koo2x"]
+_surfaces = [{
+"aabb": AABB(-1.40454, -1.40454, -3.60907, 2.80909, 2.80909, 10.9837),
+"format": 34896613377,
+"index_count": 294,
+"index_data": PackedByteArray("AAACAAEAAwACAAAAAwAEAAIABQAEAAMAAAABAAYABgABAAcABgAHAAgACAAHAAkACgAJAAsACAAJAAoADAALAA0ACgALAAwADgANAA8ADAANAA4ACAAKABAAEAAKABEACgAMABEAEQAMABIABQAPAAQADgAPAAUAAQAJAAcACQABAAsACwABAAIACwACAA0ADQACAAQADQAEAA8AEwAVABQAFgAVABMAFwAWABMAEgAWABcAFgAFABUADgAFABYAEgAOABYADAAOABIAAAAGABgAGAAGABkABgAIABkAGQAIABAABQADABUAFQADABoAAwAAABoAGgAAABgAGwASABcAEQASABsAHAARABsAEAARABwAHQAQABwAGQAQAB0AHgAZAB0AGAAZAB4AHwAYAB4AGgAYAB8AFAAaAB8AFQAaABQAIAAiACEAIQAiACMAIgAkACMAIwAkACUAJgAoACcAJwAoACkAKAAgACkAKQAgACEAKgAsACsAKwAsAC0ALAAmAC0ALQAmACcAJAAuACUAJQAuAC8ALgAqAC8ALwAqACsAMAAyADEAMwAyADAANAAxADUAMAAxADQANgA1ADcANAA1ADYAMwA3ADIANgA3ADMANwAxADIANQAxADcAMwA0ADYAMAA0ADMAHgAdACQAJAAdAC4AIgAeACQAHQAcAC4AHwAeACIALgAcACoAIAAfACIAHAAbACoAFAAfACAAKgAbACwAKAAUACAAGwAXACwAEwAUACgALAAXACYAJgATACgAFwATACYA"),
+"name": "BuildersTorch_Albedo",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("cMBwwBPXAABwwHDAAAAAAP9/IdsAAAAA/38h2xPXAACOP3DAAAAAAI4/cMAT1wAAIdv/fxPXAAAh2/9/AAAAAHDAjj8T1wAAcMCOPwAAAAD/f90kE9cAAP9/3SQAAAAAjj+OPxPXAACOP44/AAAAAN0k/38T1wAA3ST/fwAAAACB2n0ldugAAP9/AAB26AAAfSV9JXboAAAAAP9///8AAH0lgdr//wAAfSWB2nboAAAAAP9/dugAAH0lfSX//wAAgdqB2nboAAD///9/dugAAP9///926AAA/38AAP//AACB2n0l//8AAP///3///wAAgdqB2v//AAD/f/////8AABU56cb//wAAFTnpxlX9AAD/f0jk//8AAP9/SORV/QAA6cbpxv//AADpxunGVf0AABU5FTn//wAAFTkVOVX9AAC2G/9///8AALYb/39V/QAA6cYVOf//AADpxhU5Vf0AAP9/thv//wAA/3+2G1X9AABI5P9///8AAEjk/39V/QAAiKuAmfy1AACIq4CZwYkAAIirfmbBiQAAiKt+Zvy1AACK3oCZ/LUAAIregJnBiQAAit5+Zvy1AACK3n5mwYkAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lejp4"]
+resource_name = "Sketchfab_Scene_Flash Light_BuildersTorch_Albedo_0"
+_surfaces = [{
+"aabb": AABB(-1.40454, -1.40454, -3.60907, 2.80909, 2.80909, 10.9837),
+"attribute_data": PackedByteArray("//Rf+P+yv/g/s1/0P/X/8z+zf+4f9R/u//Tf7v/0n/Rfsz/vf7Mf9b/0H/k/s3/53/R/6d+y/+m/sh/kv/S/43/0/+qfsl/r37Lf5t/0f+Z/9b/t/7Qf7t+0X+hf9R/oP8Zf49/NP+F/xl/rP85/7B/Gf/G/zR/1H/U/55+0/+fftJ/jX/Xf4t++X7Dft9+ov7dfnr++35bfyD+wn8jflt/Pv6i/zz+ef5j7E7+mBxW/ppchf5iHIL+FGxS/ha8gH8ff7P/FH/pfuj/0H7u/6v/GX9v/uj/eX8Yf4//N/+Cfxh/rP84/7D/GP/Hfzd/0f8Y/4x/OH+G/xj/rf85f7H/GX/Efzv/0X54/QR+eP0ffmF9HH5lfQR+edznfmJc5f54PQR+eD0f/mC9HP5kvQT+eRzn/mGc5n54vQV+eH0cfmU9HX5lPQV+eXzkfmYc5n5XvUp+T/1IflR9FH5MvRZ+Vjzqfk5c634OPK9+Blytfg78dX4HLHd+DKxPfgTsTH5PvUh+R/1Kfkh9Fn5AvRR+TjzofkZc6X4xvR1+Kf0ffi6c534m3OV+MFy9fiicv349/Rv+Pkxf/nQMY353vRh+sCxj/q/9G352PRv+dmxffgW9G/4GLF/+P9xffj99Gz3NvRu9zfxf/ge8X34HfRl+R30Y/kc9Uf4K/VJ+C30bPc79Uz3PPRp+C30Z/gr9Uv5gvKb+Wzy3/hS8p/4fPLR+hlze/eK81/6WvNZ99lzcfoW9Fv3hfR/+lX0effW9Fv5Y/T/+F31O/mN9T/4c/Tw=="),
+"format": 34896613399,
+"index_count": 294,
+"index_data": PackedByteArray("AAACAAEAAwACAAAAAwAEAAIABQAEAAMABgAIAAcABwAIAAkABwAJAAoACgAJAAsADAAOAA0ADwAOAAwAEAASABEAEwASABAAFAAWABUAFwAWABQAGAAaABkAGQAaABsAGgAcABsAGwAcAB0AHgAgAB8AIQAgAB4AIgAkACMAJAAiACUAJQAiACYAJQAmACcAJwAmACgAJwAoACkAKgAsACsALQAsACoALgAtACoALwAtAC4AMAAyADEAMwAyADAANAAzADAANQAzADQANgA4ADcANwA4ADkAOAA6ADkAOQA6ADsAPAA+AD0APQA+AD8APgBAAD8APwBAAEEAQgBEAEMARQBEAEIARgBFAEIARwBFAEYASABKAEkASwBKAEgATABLAEgATQBLAEwATgBQAE8AUQBQAE4AUgBRAE4AUwBRAFIAVABWAFUAVQBWAFcAVgBYAFcAVwBYAFkAWgBcAFsAWwBcAF0AXABeAF0AXQBeAF8AYABiAGEAYQBiAGMAYgBkAGMAYwBkAGUAZgBoAGcAZwBoAGkAaABqAGkAaQBqAGsAbABuAG0AbwBuAGwAcAByAHEAcwByAHAAdAB2AHUAdwB2AHQAeAB6AHkAewB6AHgAfAB+AH0AfwB+AHwAgACCAIEAgwCCAIAAhACGAIUAhQCGAIcAiACEAIUAhgCJAIcAigCEAIgAhwCJAIsAjACKAIgAiQCNAIsAjgCKAIwAiwCNAI8AkACOAIwAjQCRAI8AkgCOAJAAjwCRAJMAkwCSAJAAkQCSAJMA"),
+"material": SubResource("StandardMaterial3D_d4p4s"),
+"name": "BuildersTorch_Albedo",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 148,
+"vertex_data": PackedByteArray("cMBwwBPXSBNwwHDAAACaDf9/IdsAAEQZ/38h2xPXTiSOP3DAAABTIY4/cMAT16EwcMBwwBPXPxMh2/9/E9csAHDAcMAAAJoNIdv/fwAAJgBwwI4/E9frEnDAjj8AAFMN/3/dJBPXFyT/f90kAAAPGXDAjj8AAFQNcMCOPxPXABOOP44/E9d/MI4/jj8AADch/3/dJAAAEBn/f90kE9cQJN0k/38T1zg13ST/fwAANiSOP44/AAA7IY4/jj8T14gwcMCOPxPXqQ2B2n0ldujqDf9/3SQT18Ym/38AAHbonyeOP44/E9eMNH0lfSV26L01jj9wwBPXujCOP3DAAABmId0k/38AADYk3ST/fxPXODVwwHDAAAB3ESHb/38AAKoicMCOPwAAuxv/f90kAACCBP9/IdsAAJAEjj+OPwAAhxGOP3DAAADTG90k/38AAIsiAAD/f///VDl9JYHa//8oS30lgdp26IUzAAD/f3boqCV9JX0l//+jJX0lfSV26OIQAAD/f3boNTZ9JYHadugAKo4/cMAT1xwp3ST/fxPXATV9JX0ldugEL44/jj8T1w4ucMBwwBPXaxiB2oHadujpGCHb/38T12QD////f3bogANwwI4/E9csHoHafSV26M8ejj9wwBPX2jJ9JYHaduj9M/9/IdsT13ch/3///3boHSJwwHDAE9dJB4Hagdp26GUH/38AAP//ojd9JX0l//+1T30lfSV26GQx/38AAHbokiSB2n0l//8DHIHafSV26BsT////f///2wCB2n0l///IG4HafSV26P4S////f3boeACB2oHa//97HYHagdp26OMT/3//////TTmB2oHa//81HoHagdp26CIU/3///3boVCV9JYHa///7UH0lgdp26OExFTnpxv//WxwVOenGVf1TG/9/SOT//805/39I5FX95zbpxunG//8cVunG6cZV/blPFTkVOf//TB8VORU5Vf17HbYb/3///7YBthv/f1X9RQEVOenG//+xGxU56cZV/dca6cYVOf//y1jpxhU5Vf1iUf9/thv//zE+/3+2G1X97zkVORU5//+0HxU5FTlV/bAd6cbpxv//pVXpxunGVf1gT0jk/3////ZlSOT/f1X9vVvpxhU5//9XWenGFTlV/bVRiKuAmfy1ly2Iq4CZwYlkBIirfmbBiXsmiKt+Zvy13T6K3oCZ/LV1V4regJnBiRYeiKuAmcGJwR6Iq4CZ/LUBWIrefmb8tY9Ait5+ZsGJoSaK3oCZwYlkBYregJn8tXYviKt+Zvy1dVeIq35mwYkWHorefmbBicEeit5+Zvy1AViK3n5mwYnbBIirfmbBiY0miKuAmcGJ2wSK3oCZwYmPJoirfmb8tZwuit5+Zvy10z+K3oCZ/LWcLoirgJn8tbQ/gdqB2v//7CXpxunG//+SKv///3///6YvSOT/f////i//f0jk//8yKoHafSX//2Ax/3//////LCTpxhU5//9cMBU56cb//5cw/38AAP//5yN9JYHa//+ZMf9/thv///cpthv/f///ADB9JX0l///wJQAA/3///6YvFTkVOf//myrluiiY8sPOm+qzibN2rjCuJKFPz9Ge4MnaujKYXci+f/HDz5t11qF/iRh5xUgchbxgLtzR3TOPzEcchLxzGGTFA0qf4ZZPad/dM47MZi7m0WeAw/+agJb/jU9W3/pJgeGrHZvKWx0xy/Irks2PK+zNCUSPzd1Dn80ln8fJjKEbz5WB7P6EgSL/JUudFHJZHRqFdvAkqHVLMHWKns+5tIHr1Yng2qKnJeUj4PvgR+86yZzacbgH0bPSodfb9HLIYeW0dl7vvYocz8mK18+odoHvtEs+6TNM+eibwHKS6789ksoEzEXKBN5Evgqut5YKa7iap0PHdKf2xk6qirDgqSKwsq9boyivAKNlH1Ph2je56b9JWuIzLqbSYw/h23QYScYhqYR/ew/525EYZsYsx1V/uaTGjn26q5fVnwSfCKV3jry6bJd4rpGtC5gyuDyfS8mDDNXjrA8q3LYZxOeOH9PheS9V7do3tekRnZqLuaTGjomfTH8OqUl/tgwJ5N4PXNyQlYiwoZhPuKWaG5lJoN6eMZ15i8+ksI5OL83twzcs6rmNmPx1iET9NJbEsB6ZaLgceTavrFZgtGE65LPkSH+GJr1pUtXYhHUy8zuoYc9gwhEIWDcTNppEqTUJKGMwtQXYQpWtKSd6iswMw1edMJ49uqgGS9Q63LREV/i0F8X6SibQvvlhBz032C9ABrn4xciAKAALGt83+IkZDSGY7Bblixss79EET9HX3AITefonI20Fv9wzIyHtUfvTLmzkuBBnE+cafNcA9XXm8d7oIMQH")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_koo2x")
+
+[node name="jugador" type="Node3D"]
 
 [node name="players" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 floor_max_angle = 1.0472
+platform_wall_layers = 3
 script = ExtResource("1_gl526")
 jump_velocity = 5.0
 walk_speed = 3.5
@@ -35,36 +72,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera" type="Camera3D" parent="players/Head"]
 fov = 80.0
-far = 1000.0
+far = 800.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="players/Head"]
-light_energy = 2.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0369292, -0.270854, 0.752261)
+light_energy = 1.7
+light_bake_mode = 0
 distance_fade_enabled = true
 spot_range = 11.6977
 spot_angle = 39.1736
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="players/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125716, -1.8, -15.7976)
-occluder = SubResource("BoxOccluder3D_raa7h")
+[node name="SpotLight3D2" type="SpotLight3D" parent="players/Head"]
+transform = Transform3D(-0.994834, -0.0255329, 0.0982499, 0.0998567, -0.0719949, 0.992394, -0.0182652, 0.997078, 0.0741726, 0.604074, 1.10821, -1.17833)
+visible = false
+layers = 2
+light_energy = 1.7
+light_bake_mode = 0
+distance_fade_enabled = true
+spot_range = 1.6211
+spot_angle = 13.056
+
+[node name="Flash Light_BuildersTorch_Albedo_0" type="MeshInstance3D" parent="players/Head"]
+transform = Transform3D(-2.46514e-11, 0.105877, -0.00538948, 0.105891, 0.000259892, 0.00510563, 0.00511224, -0.00538321, -0.105754, 0.605579, -0.685918, -0.815538)
+layers = 2
+mesh = SubResource("ArrayMesh_lejp4")
+skeleton = NodePath("")
 
 [node name="RayCast3D" type="RayCast3D" parent="players"]
 target_position = Vector3(0, 2, 0)
 
-[node name="Control" type="Control" parent="players"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ColorRect" type="ColorRect" parent="players/Control"]
-layout_mode = 0
-offset_left = 206.0
-offset_top = 178.0
-offset_right = 328.0
-offset_bottom = 224.0
-
 [node name="Timer" type="Timer" parent="players"]
 wait_time = 60.0
-autostart = true
 
 [connection signal="timeout" from="players/Timer" to="players" method="_on_timer_timeout"]

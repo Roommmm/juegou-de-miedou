@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd84ctyafeumg"]
+[gd_scene load_steps=8 format=3 uid="uid://bd84ctyafeumg"]
 
 [ext_resource type="ArrayMesh" uid="uid://bhoqa86cpx3g3" path="res://models/source/Backrooms Level 0/tinker.obj" id="1_g18rc"]
+[ext_resource type="Script" path="res://scripts/backroom_0.gd" id="1_urm21"]
 [ext_resource type="PackedScene" uid="uid://8p6nxmlqs30a" path="res://scenes/player.tscn" id="2_0ul3s"]
 [ext_resource type="PackedScene" uid="uid://6nj8jdgtgf4q" path="res://scenes/aguadealmendra.tscn" id="3_4mobv"]
 [ext_resource type="PackedScene" uid="uid://bl3fctdyddlt7" path="res://scenes/bacteria.tscn" id="4_fmu6j"]
+[ext_resource type="AudioStream" uid="uid://cugji0ctv88go" path="res://sound/The_Backrooms_Sound_(youconvert.net).mp3" id="6_1cuvs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6k8n"]
+size = Vector3(1.02502, 1.93896, 2.15717)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_urm21")
 
 [node name="Tinker" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.184231, 0, 0, 0, -8.053e-09, 0.184231, 0, -0.184231, -8.053e-09, 0.488899, 0, 0.00218964)
@@ -15,7 +21,6 @@ mesh = ExtResource("1_g18rc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08027, 1.62958, 1.52665)
 
 [node name="invstage" type="Node3D" parent="."]
-visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="invstage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77393, -0.157776, 17.1626)
@@ -43,11 +48,13 @@ size = Vector3(3.61299, 6.99976, 8.21011)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="invstage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37394, 3.04504, -7.93442)
+visible = false
 use_collision = true
 size = Vector3(3.63043, 6.26807, 8.23682)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="invstage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0783, 2.72119, -6.71396)
+visible = false
 use_collision = true
 size = Vector3(8.37573, 6.44238, 3.62207)
 
@@ -59,6 +66,7 @@ size = Vector3(8.21835, 6.44238, 3.646)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="invstage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27714, 2.72119, -12.2405)
+visible = false
 use_collision = true
 size = Vector3(3.63798, 6.44238, 8.22687)
 
@@ -337,6 +345,7 @@ size = Vector3(3.67892, 6.44238, 8.27191)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="invstage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5607, 3.93323, 18.5056)
+visible = false
 use_collision = true
 size = Vector3(1, 7.73486, 80.3678)
 
@@ -352,6 +361,7 @@ size = Vector3(1, 7.73486, 80.3678)
 
 [node name="CSGBox3D43" type="CSGBox3D" parent="invstage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.7309, 3.93323, 18.5056)
+visible = false
 use_collision = true
 size = Vector3(12.089, 7.73486, 80.3678)
 
@@ -367,6 +377,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1759, -9.68816)
 visible = false
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5282, 23.0807, 22.1509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61448, 23.0807, -7.35016)
 use_collision = true
-size = Vector3(88.2139, 0.684448, 122.682)
+size = Vector3(5.88095, 0.684448, 4.33976)
+
+[node name="event" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="event"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.2996, 3.17553, -13.6389)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="event/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58026, -0.469482, 0.0150452)
+shape = SubResource("BoxShape3D_d6k8n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1cuvs")
+autoplay = true
+
+[connection signal="body_entered" from="event/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gift Box 01
+* source:	https://sketchfab.com/3d-models/gift-box-01-1e2e309b7899475282f633fd800cf462
+* author:	WTHanimation (https://sketchfab.com/WTHanimation)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gift Box 01" (https://sketchfab.com/3d-models/gift-box-01-1e2e309b7899475282f633fd800cf462) by WTHanimation (https://sketchfab.com/WTHanimation) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
