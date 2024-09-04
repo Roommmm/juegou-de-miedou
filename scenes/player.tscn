@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://8p6nxmlqs30a"]
+[gd_scene load_steps=10 format=4 uid="uid://8p6nxmlqs30a"]
 
 [ext_resource type="Script" path="res://addons/ultimate_character/ucharacterbody3d.gd" id="1_gl526"]
 [ext_resource type="Texture2D" uid="uid://btk3hw0t5ywib" path="res://models/flash_light_psx__low_poly/textures/BuildersTorch_Albedo_baseColor.png" id="2_ymgvg"]
+[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="3_db06c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjhm5"]
 
@@ -45,6 +46,30 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_koo2x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmhak"]
+shader = ExtResource("3_db06c")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 2.51
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [node name="jugador" type="Node3D"]
 
@@ -103,5 +128,12 @@ target_position = Vector3(0, 2, 0)
 
 [node name="Timer" type="Timer" parent="players"]
 wait_time = 60.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="players"]
+
+[node name="ColorRect" type="ColorRect" parent="players/CanvasLayer"]
+material = SubResource("ShaderMaterial_fmhak")
+offset_right = 321.0
+offset_bottom = 242.0
 
 [connection signal="timeout" from="players/Timer" to="players" method="_on_timer_timeout"]

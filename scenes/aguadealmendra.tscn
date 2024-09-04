@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://6nj8jdgtgf4q"]
+[gd_scene load_steps=8 format=4 uid="uid://6nj8jdgtgf4q"]
 
+[ext_resource type="Script" path="res://scripts/aguadealmendra.gd" id="1_vdcy6"]
 [ext_resource type="Texture2D" uid="uid://bjyhinqt535eh" path="res://models/almond_water_can/textures/Material_001_baseColor.jpeg" id="2_as20f"]
 [ext_resource type="Script" path="res://scripts/scene.gd" id="2_hhpxn"]
 
@@ -45,31 +46,24 @@ shadow_mesh = SubResource("ArrayMesh_80ucp")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6fc6h"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" groups=["Grab"]]
+script = ExtResource("1_vdcy6")
 
 [node name="Sketchfab_Scene" type="Node3D" parent="."]
 transform = Transform3D(3.55464, 0, 0, 0, 3.55464, 0, 0, 0, 3.55464, -0.0287017, 0, -0.0807447)
 script = ExtResource("2_hhpxn")
 
-[node name="Sketchfab_model" type="Node3D" parent="Sketchfab_Scene"]
-transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
-
-[node name="3d32106177f74a3d9f2d02ef4d0cf531_fbx" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model"]
-transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
-
-[node name="RootNode" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/3d32106177f74a3d9f2d02ef4d0cf531_fbx"]
-
-[node name="Almond_Water_Can_with_texture" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/3d32106177f74a3d9f2d02ef4d0cf531_fbx/RootNode"]
-transform = Transform3D(96.569, 0, 0, 0, -1.57331e-05, 96.569, 0, -96.569, -1.57331e-05, 0, 0, 0)
-
-[node name="Almond_Water_Can_with_texture_Material_001_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/3d32106177f74a3d9f2d02ef4d0cf531_fbx/RootNode/Almond_Water_Can_with_texture"]
+[node name="water" type="MeshInstance3D" parent="Sketchfab_Scene"]
+transform = Transform3D(0.96569, 0, 0, 0, -1.57331e-07, 0.96569, 0, -0.96569, -1.57331e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_mxah8")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="Sketchfab_Scene"]
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(3.55464, 0, 0, 0, 3.55464, 0, 0, 0, 3.55464, -0.0287017, 0, -0.0807447)
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_6fc6h")
 
-[connection signal="body_entered" from="Sketchfab_Scene/Area3D" to="Sketchfab_Scene" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

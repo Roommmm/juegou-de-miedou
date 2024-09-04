@@ -19,13 +19,13 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=480
+window/size/viewport_width=320
+window/size/viewport_height=240
 window/size/mode=3
 window/size/initial_position_type=0
 window/size/resizable=false
+window/size/borderless=true
 window/stretch/mode="viewport"
-window/stretch/scale=3.5
 window/vsync/vsync_mode=0
 
 [editor]
@@ -35,6 +35,10 @@ movie_writer/fps=50
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ultimate_character/plugin.cfg")
+
+[global_group]
+
+Grab=""
 
 [input]
 
@@ -78,9 +82,15 @@ GRAB={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":69,"location":0,"echo":false,"script":null)
 ]
 }
+"ON & OFF"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":70,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
+3d_render/layer_1="map"
 3d_render/layer_2="hands"
 
 [rendering]

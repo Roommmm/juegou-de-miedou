@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7oj7y646ue2t"]
+[gd_scene load_steps=11 format=3 uid="uid://c7oj7y646ue2t"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_7giow"]
 [ext_resource type="ArrayMesh" uid="uid://th0ksy5y2h4i" path="res://models/backrooms/source/backrooms-main-menu-obj/backrooms-main-menu.obj" id="1_furxt"]
@@ -6,6 +6,31 @@
 [ext_resource type="PackedScene" uid="uid://duuycfhk7nsqx" path="res://models/partygoer_from_backrooms/scene.gltf" id="3_f5mmi"]
 [ext_resource type="AudioStream" uid="uid://ci0nvlodyha3m" path="res://sound/First_computer_to_sing_-_Daisy_Bell_(youconvert.net).mp3" id="5_hucsx"]
 [ext_resource type="PackedScene" uid="uid://najq560srpvr" path="res://models/bacteria_-_backrooms_actually_pretty_accurate/scene.gltf" id="6_yfkbp"]
+[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="7_pdkj5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvdlk"]
+shader = ExtResource("7_pdkj5")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 2.51
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="FontFile" id="FontFile_hmns1"]
 cache/0/120/0/ascent = 0.0
@@ -48,6 +73,11 @@ cache/0/25/0/descent = 0.0
 cache/0/25/0/underline_position = 0.0
 cache/0/25/0/underline_thickness = 0.0
 cache/0/25/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
 
 [sub_resource type="FontFile" id="FontFile_bvh1e"]
 cache/0/50/0/ascent = 0.0
@@ -70,6 +100,16 @@ cache/0/10/0/descent = 0.0
 cache/0/10/0/underline_position = 0.0
 cache/0/10/0/underline_thickness = 0.0
 cache/0/10/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_7giow")
@@ -80,6 +120,15 @@ mesh = ExtResource("1_furxt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344754, 4.38147, 2.22148)
+far = 70.23
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_mvdlk")
+offset_right = 325.0
+offset_bottom = 243.0
+mouse_filter = 2
 
 [node name="Tinker" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.291942, 0, 0, 0, -1.27612e-08, 0.291942, 0, -0.291942, -1.27612e-08, 1.93632, -1.33169, -11.0633)
@@ -88,7 +137,6 @@ mesh = ExtResource("2_yg72n")
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.54135, 3.94582)
 light_color = Color(0.960437, 0.701168, 0.668736, 1)
-light_energy = 1.5
 light_indirect_energy = 3.0
 spot_range = 32.785
 spot_angle = 33.2955
@@ -112,18 +160,29 @@ offset_top = 2.0
 offset_right = 467.0
 offset_bottom = 321.0
 theme_override_fonts/font = SubResource("FontFile_hmns1")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Backrooms"
 
 [node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 23.0
+layout_mode = 2
+offset_left = 16.0
 offset_top = 44.0
-offset_right = 66.0
-offset_bottom = 63.0
+offset_right = 82.0
+offset_bottom = 79.0
+theme_override_fonts/font = SubResource("FontFile_bvh1e")
+theme_override_font_sizes/font_size = 20
+text = "Play"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 64.0
+offset_bottom = 101.0
 theme_override_fonts/font = SubResource("FontFile_bvh1e")
 theme_override_font_sizes/font_size = 10
-text = "Play"
+text = "Exit
+"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.63376, 14.5493, -12.1449)
@@ -134,3 +193,5 @@ stream = ExtResource("5_hucsx")
 autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="editor_description_changed" from="Control/Button2" to="." method="_on_button_2_editor_description_changed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

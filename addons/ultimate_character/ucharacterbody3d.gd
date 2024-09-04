@@ -3,6 +3,7 @@ extends CharacterBody3D
 class_name UCharacterBody3D
 @onready var camera: Camera3D = $Head/Camera
 @onready var timer: Timer = $Timer
+@onready var spot_light_3d: SpotLight3D = $Head/SpotLight3D
 
 ## A 3D physics body using a revamped template script.
 
@@ -57,7 +58,7 @@ var collision_shape_crouch : CollisionShape3D
 var head_node : Node3D
 var camera_node : Camera3D
 var raycast_node : RayCast3D
-
+var light = true
 var current_speed = walk_speed
 var slide_timer = 0.0
 var slide_vector = Vector2.ZERO
@@ -159,12 +160,19 @@ func _physics_process(delta):
 		# Get input direction
 		var input_dir = Input.get_vector("LEFT", "RIGHT", "UP", "DOWN")
 		
+		if Input.is_action_just_pressed("ON & OFF") and light == true:
+			spot_light_3d.light_energy = 0.05
+			light = false
+		elif Input.is_action_just_pressed("ON & OFF") and light == false:
+			spot_light_3d.light_energy = 1
+			light = true
 		# Handle crouch, sprint, walk speed.
 		if Input.is_action_pressed("CROUCH") or is_sliding:
 			current_speed = lerpf(current_speed, crouch_speed, delta * 10.0)
 			head_node.position.y = lerpf(head_node.position.y, crouching_height, delta * 10.0)
 			collision_shape_normal.disabled = true
 			collision_shape_crouch.disabled = false
+			
 			
 			# Handle sliding
 			
@@ -248,3 +256,6 @@ func _on_timer_timeout() -> void:
 func reset_timer():
 	seconds = Dseconds
 	minutes = Dminutes
+
+	
+	

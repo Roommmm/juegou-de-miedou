@@ -1,8 +1,9 @@
 extends Node3D
 
 @onready var sketchfab_scene: Node3D = $"."
-@onready var almond_water_can_with_texture_material_001_0: MeshInstance3D = $"Sketchfab_model/3d32106177f74a3d9f2d02ef4d0cf531_fbx/RootNode/Almond_Water_Can_with_texture/Almond_Water_Can_with_texture_Material_001_0"
+@onready var water: MeshInstance3D = $water
 
+var ch = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +17,11 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 		print("BODY ENTERED")
-		
-		if Input.is_action_just_pressed("GRAB"):
-			almond_water_can_with_texture_material_001_0.queue_free()
+		ch = true
+		if Input.is_action_pressed("GRAB") and ch == true:
 			print("obj borrado")
+			queue_free()
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	ch = false
