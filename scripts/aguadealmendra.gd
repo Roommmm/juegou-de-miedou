@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var sketchfab_scene: Node3D = $"."
-@onready var almond_water_can_with_texture_material_001_0: MeshInstance3D = $"Sketchfab_model/3d32106177f74a3d9f2d02ef4d0cf531_fbx/RootNode/Almond_Water_Can_with_texture/Almond_Water_Can_with_texture_Material_001_0"
+
 var ch = false
 
 # Called when the node enters the scene tree for the first time.

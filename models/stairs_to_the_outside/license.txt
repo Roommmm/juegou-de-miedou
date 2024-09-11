@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stairs to the outside
+* source:	https://sketchfab.com/3d-models/stairs-to-the-outside-53223b6695634bffb3f90e62ac8a4537
+* author:	Denkon (https://sketchfab.com/nykondenys)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stairs to the outside" (https://sketchfab.com/3d-models/stairs-to-the-outside-53223b6695634bffb3f90e62ac8a4537) by Denkon (https://sketchfab.com/nykondenys) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

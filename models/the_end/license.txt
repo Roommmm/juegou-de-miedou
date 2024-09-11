@@ -1,0 +1,11 @@
+Model Information:
+* title:	The End
+* source:	https://sketchfab.com/3d-models/the-end-332a2bb22a3543e7be0bc43b24690d44
+* author:	TheFungus (https://sketchfab.com/TheFoognus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "The End" (https://sketchfab.com/3d-models/the-end-332a2bb22a3543e7be0bc43b24690d44) by TheFungus (https://sketchfab.com/TheFoognus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

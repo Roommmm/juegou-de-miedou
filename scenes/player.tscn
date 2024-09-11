@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://8p6nxmlqs30a"]
+[gd_scene load_steps=12 format=4 uid="uid://8p6nxmlqs30a"]
 
 [ext_resource type="Script" path="res://addons/ultimate_character/ucharacterbody3d.gd" id="1_gl526"]
 [ext_resource type="Texture2D" uid="uid://btk3hw0t5ywib" path="res://models/flash_light_psx__low_poly/textures/BuildersTorch_Albedo_baseColor.png" id="2_ymgvg"]
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="3_db06c"]
+[ext_resource type="PackedScene" uid="uid://bucqpd16g6a4i" path="res://scenes/interact.tscn" id="3_ys0qp"]
+[ext_resource type="Texture2D" uid="uid://v0ww31pr63se" path="res://texturas/Crosshair-PNG-File-415628288.png" id="4_76ttu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjhm5"]
 
@@ -123,6 +125,8 @@ layers = 2
 mesh = SubResource("ArrayMesh_lejp4")
 skeleton = NodePath("")
 
+[node name="Node3D" parent="players/Head" instance=ExtResource("3_ys0qp")]
+
 [node name="RayCast3D" type="RayCast3D" parent="players"]
 target_position = Vector3(0, 2, 0)
 
@@ -135,5 +139,22 @@ wait_time = 60.0
 material = SubResource("ShaderMaterial_fmhak")
 offset_right = 321.0
 offset_bottom = 242.0
+
+[node name="TextureRect" type="TextureRect" parent="players/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_76ttu")
+expand_mode = 1
 
 [connection signal="timeout" from="players/Timer" to="players" method="_on_timer_timeout"]
